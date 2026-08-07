@@ -220,7 +220,7 @@ RUN chmod 0755 /usr/local/bin/docker-entrypoint.sh \
 # First-init scripts dir (official image convention).
 RUN mkdir -p /docker-entrypoint-initdb.d
 
-VOLUME /var/lib/postgresql/data
+# VOLUME /var/lib/postgresql/data
 
 EXPOSE 5432
 STOPSIGNAL SIGINT
