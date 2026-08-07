@@ -81,9 +81,9 @@ COPY . /src
 # staged share tree (contrib extension control/SQL files + tsearch data, staged
 # by main_main's build.rs next to the binary) are copied OUT of the cache mount
 # within the same RUN, because cache mounts are not part of the image.
-RUN --mount=type=cache,target=/usr/local/cargo/registry \
-    --mount=type=cache,target=/build/target \
-    cargo build --release --locked --bin postgres \
+#RUN --mount=type=cache,target=/usr/local/cargo/registry \
+#    --mount=type=cache,target=/build/target \
+RUN cargo build --release --locked --bin postgres \
     && cp /build/target/release/postgres /opt/pgrust-postgres \
     && cp -r /build/target/release/share /opt/pgrust-share
 
